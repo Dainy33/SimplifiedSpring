@@ -1,12 +1,14 @@
+import IOC.BeanFactory;
 import bean.BeansLoader;
+import model.Card;
 import org.junit.Test;
 
 public class BeanTest {
     @Test
     public void getTest(){
-        BeansLoader loader = new BeansLoader();
-        String packageName = "model";
-        loader.loadBeansBasedOnPackage(packageName);
+        BeanFactory factory = new BeanFactory();
+        Object bean = factory.getBean(Card.class);
+        System.out.println();
     }
 }
 /**

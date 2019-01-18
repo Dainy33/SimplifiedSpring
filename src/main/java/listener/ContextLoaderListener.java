@@ -1,6 +1,6 @@
 package listener;
 
-import IOC.IOCContainer;
+import IOC.BeanFactory;
 
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
@@ -9,13 +9,13 @@ public class ContextLoaderListener implements ServletContextListener {
     @Override
     public void contextInitialized(ServletContextEvent sce) {
         //init IOC container
-        IOCContainer.init();
+        //BeanFactory.init();
     }
 
     @Override
     public void contextDestroyed(ServletContextEvent sce) {
         //destroy IOC container
-        IOCContainer.destroy();
+        //BeanFactory.destroy();
     }
 }
 /**

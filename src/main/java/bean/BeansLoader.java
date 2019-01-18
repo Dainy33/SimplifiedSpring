@@ -1,16 +1,17 @@
 package bean;
 
+import IOC.BeanContainer;
 import annotation.Bean;
 import annotation.Value;
 import utils.ClazzUtils;
 
 import java.lang.reflect.Field;
-import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public class BeansLoader {
 
-    private List<Object> container = new ArrayList<>();
+    Map<String,Object> container = BeanContainer.getContainer();
 
     //scan based on package
     public boolean loadBeansBasedOnPackage(String packageName) {
@@ -45,7 +46,7 @@ public class BeansLoader {
                 field.set(o, value.value());
             }
 
-            container.add(o);
+            container.put(name,o);
 
             return o;
 
