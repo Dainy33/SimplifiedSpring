@@ -1,5 +1,7 @@
 package IOC;
 
+import bean.BeansBind;
+import bean.BeansInit;
 import bean.BeansLoader;
 
 import javax.annotation.PostConstruct;
@@ -13,6 +15,10 @@ public class BeanFactory {
     private Map<String,Object> container = BeanContainer.getContainer();
 
     private BeansLoader loader = new BeansLoader();
+
+    private BeansInit beansInit = new BeansInit();
+
+    private BeansBind beansBind = new BeansBind();
 
     public BeanFactory() {
         init();
@@ -31,7 +37,9 @@ public class BeanFactory {
         packageNames.add(packageName);
 
         for (String name : packageNames) {
-            loader.loadBeansBasedOnPackage(name);
+            beansInit.initBeansBasedOnPackage(name);
+            beansBind.bindedBeansBasedOnPackage(name);
+            //loader.loadBeansBasedOnPackage(name);
         }
 
     }

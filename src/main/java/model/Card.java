@@ -1,5 +1,6 @@
 package model;
 
+import annotation.Autowired;
 import annotation.Bean;
 import annotation.Value;
 
@@ -14,6 +15,9 @@ public class Card {
 
     @Value("Mars")
     private String address;
+
+    @Autowired
+    private Phone phone;
 
     public String getId() {
         return id;
@@ -37,6 +41,14 @@ public class Card {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public Phone getPhone() {
+        return phone;
+    }
+
+    public void setPhone(Phone phone) {
+        this.phone = phone;
     }
 }
 /**
