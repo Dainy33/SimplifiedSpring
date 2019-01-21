@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sbeans>
+
+
+    <spackage>
+        <spackage-name>model</spackage-name>
+    </spackage>
+
+    <spackage>
+        <spackage-name>service</spackage-name>
+    </spackage>
+
+
+    <sbean>
+        <sbean-class>1</sbean-class>
+        <sbean-name>1</sbean-name>
+    </sbean>
+
+    <sbean>
+        <sbean-class>2</sbean-class>
+        <sbean-name>2</sbean-name>
+    </sbean>
+
+
+</sbeans>

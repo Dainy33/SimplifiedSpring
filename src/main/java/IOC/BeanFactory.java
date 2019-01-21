@@ -3,10 +3,8 @@ package IOC;
 import bean.BeansBind;
 import bean.BeansInit;
 import bean.BeansLoader;
+import utils.Config.XMLConfigLoader;
 
-import javax.annotation.PostConstruct;
-import javax.ejb.Init;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -21,7 +19,6 @@ public class BeanFactory {
     private BeansBind beansBind = new BeansBind();
 
     public BeanFactory() {
-        init();
     }
 
     //based on annotation
@@ -32,9 +29,12 @@ public class BeanFactory {
         //annotation and reflection
 
         //TODO get package name list from config
-        List<String> packageNames = new ArrayList<>();
+/*        List<String> packageNames = new ArrayList<>();
         String packageName = "model";
-        packageNames.add(packageName);
+        packageNames.add(packageName);*/
+
+        XMLConfigLoader loader = new XMLConfigLoader();
+        List<String> packageNames = loader.getScanedPackagesFromXML();
 
         for (String name : packageNames) {
             beansInit.initBeansBasedOnPackage(name);

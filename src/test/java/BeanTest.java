@@ -1,14 +1,14 @@
 import IOC.BeanFactory;
-import bean.BeansLoader;
 import model.Card;
 import org.junit.Test;
 
 public class BeanTest {
     @Test
-    public void getTest(){
+    public void getTest() {
         BeanFactory factory = new BeanFactory();
+        factory.init();
         Object bean = factory.getBean(Card.class);
-        System.out.println();
+        factory.destroy();
     }
 }
 /**

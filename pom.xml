@@ -7,6 +7,8 @@
     <groupId>com.dainy33.naughty</groupId>
     <artifactId>SimplifiedSpringFrameWork</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>war</packaging>
+
     <build>
         <plugins>
             <plugin>
@@ -153,12 +155,6 @@
             <groupId>org.codehaus.jackson</groupId>
             <artifactId>jackson-mapper-asl</artifactId>
             <version>1.9.13</version>
-        </dependency>
-
-        <dependency>
-            <groupId>net.sf.json-lib</groupId>
-            <artifactId>json-lib</artifactId>
-            <version>2.4</version>
         </dependency>
 
 
