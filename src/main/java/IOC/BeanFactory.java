@@ -22,7 +22,7 @@ public class BeanFactory {
     }
 
     //based on annotation
-    public void init() {
+    public void init(String sApplicationContext) {
 
         //create Beans
         //scan path to get Class's name
@@ -34,7 +34,7 @@ public class BeanFactory {
         packageNames.add(packageName);*/
 
         XMLConfigLoader loader = new XMLConfigLoader();
-        List<String> packageNames = loader.getScanedPackagesFromXML();
+        List<String> packageNames = loader.getScanedPackagesFromXML(sApplicationContext);
 
         for (String name : packageNames) {
             beansInit.initBeansBasedOnPackage(name);

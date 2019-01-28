@@ -14,7 +14,8 @@ public class ContextLoaderListener implements ServletContextListener {
     public void contextInitialized(ServletContextEvent sce) {
         //init IOC container
         //BeanFactory.init();
-        factory.init();
+        String sApplicationContext = sce.getServletContext().getInitParameter("SimplifiedApplicationContext");
+        factory.init(sApplicationContext);
     }
 
     @Override

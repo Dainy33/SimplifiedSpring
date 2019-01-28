@@ -14,10 +14,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class XMLConfigLoader implements ConfigLoader {
-    public List<String> getScanedPackagesFromXML() {
+    public List<String> getScanedPackagesFromXML(String sApplicationContext) {
 
         List<String> packageNames = new ArrayList<>();
-        String path = this.getClass().getClassLoader().getResource("SimplifiedApplicationContext.xml").getPath();
+        String path = this.getClass().getClassLoader().getResource(sApplicationContext).getPath();
         try {
             DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
             DocumentBuilder db = dbf.newDocumentBuilder();

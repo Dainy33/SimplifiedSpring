@@ -6,7 +6,7 @@ public class BeanTest {
     @Test
     public void getTest() {
         BeanFactory factory = new BeanFactory();
-        factory.init();
+        factory.init("SimplifiedApplicationContext.xml");
         Object bean = factory.getBean(Card.class);
         factory.destroy();
     }
